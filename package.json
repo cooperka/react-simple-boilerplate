@@ -1,0 +1,19 @@
+{
+  "name": "react-simple-boilerplate",
+  "version": "0.0.1",
+  "description": "Boilerplate repo for starting ReactJS apps. Mostly for personal use and sandboxing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cooperka/react-simple-boilerplate.git"
+  },
+  "author": "Kevin Cooper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cooperka/react-simple-boilerplate/issues"
+  },
+  "homepage": "https://github.com/cooperka/react-simple-boilerplate#readme"
+}
