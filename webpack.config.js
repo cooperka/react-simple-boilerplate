@@ -1,4 +1,4 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 
 module.exports = {
 
@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: __dirname + '/build',
     publicPath: '/build',
-    filename: "bundle.js",
+    filename: 'bundle.js',
   },
 
   plugins: [
@@ -23,7 +23,7 @@ module.exports = {
       {
         test: /\.js?$/,
         exclude: /node_modules/,
-        loader: "babel",
+        loader: 'babel',
         query: {
           cacheDirectory: true,
           presets: ['es2015', 'react'],
@@ -31,7 +31,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: "style!css",
+        loader: 'style!css',
       },
     ],
   },
