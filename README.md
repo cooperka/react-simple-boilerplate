@@ -2,6 +2,13 @@
 
 Boilerplate repo for starting ReactJS apps. Mostly for personal use and sandboxing.
 
+## Usage
+
+1. Clone the repo
+2. `npm i`
+3. `webpack src/hello-world.js build/bundle.js`
+4. Navigate to `index.html` in your browser
+
 ## Contributing
 
 1. Fork it!
