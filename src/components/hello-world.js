@@ -2,14 +2,14 @@ import React from 'react';
 
 require('../style/hello-world.css');
 
-var HelloWorld = React.createClass({
+class HelloWorld extends React.Component {
 
-  render: function() {
+  render() {
     return (
       <h1>Hello, world!</h1>
     );
-  },
+  }
 
-});
+}
 
 export default HelloWorld;
