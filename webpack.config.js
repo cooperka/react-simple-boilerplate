@@ -1,6 +1,6 @@
 module.exports = {
 
-  entry: "./src/hello-world.js",
+  entry: "./src/app.js",
 
   output: {
     path: __dirname + '/build',
