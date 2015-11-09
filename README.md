@@ -6,8 +6,8 @@ Boilerplate repo for starting ReactJS apps. Mostly for personal use and sandboxi
 
 1. Clone the repo
 2. `npm i`
-3. `webpack src/hello-world.js build/bundle.js`
-4. Navigate to `index.html` in your browser
+3. `npm start`
+4. Navigate to <http://localhost:8080>
 
 ## Contributing
 
