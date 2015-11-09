@@ -1,9 +1,9 @@
-var React = require("react");
-var ReactDOM = require("react-dom");
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-require('!style!css!./style/hello-world.css');
+require('./style/hello-world.css');
 
 ReactDOM.render(
-  React.createElement('h1', null, 'Hello, world!'),
+  <h1>Hello, world!</h1>,
   document.getElementById('example')
 );
