@@ -13,6 +13,8 @@ module.exports = {
     filename: 'bundle.js',
   },
 
+  devtool: 'cheap-module-eval-source-map',
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
@@ -35,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.(scss|sass)$/,
-        loaders: ['style', 'css', 'sass'],
+        loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
       },
     ],
   },
