@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
 
-jest.dontMock('../../src/components/hello-world');
-const HelloWorld = require('../../src/components/hello-world');
+import HelloWorld from '../../src/components/hello-world';
+
+const { expect } = chai;
 
 describe('HelloWorld component', () => {
 
@@ -14,8 +16,8 @@ describe('HelloWorld component', () => {
 
     const helloWorldNode = ReactDOM.findDOMNode(helloWorld);
     const helloWorldText = helloWorldNode.innerHTML;
-    expect(helloWorldText).toContain('Hello');
-    expect(helloWorldText).toContain('world');
+    expect(helloWorldText).to.contain('Hello');
+    expect(helloWorldText).to.contain('world');
   });
 
 });

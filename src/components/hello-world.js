@@ -1,6 +1,6 @@
 import React from 'react';
 
-//require('../style/hello-world.scss');
+require('../style/hello-world.scss');
 
 class HelloWorld extends React.Component {
 
