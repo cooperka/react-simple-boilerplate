@@ -10,7 +10,7 @@
     "test": "jest --watch"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/jest-webpack",
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-dom",
@@ -22,7 +22,6 @@
       "jsx"
     ]
   },
-  "jest-webpack-config": "jest-webpack.config.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cooperka/react-simple-boilerplate.git"
@@ -44,7 +43,6 @@
     "eslint-config-airbnb": "^1.0.0",
     "eslint-plugin-react": "^3.8.0",
     "jest-cli": "^0.7.1",
-    "jest-webpack": "^0.2.1",
     "node-sass": "^3.4.1",
     "react": "^0.14.2",
     "react-addons-test-utils": "^0.14.2",
