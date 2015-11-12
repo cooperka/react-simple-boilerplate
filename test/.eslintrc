@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "padded-blocks": 0
+  },
+
+  "env": {
+    "jest": true
+  }
+}
