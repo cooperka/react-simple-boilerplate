@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { addThing } from '../../../flux/actions';
+import { addThing } from '../../../redux/actions';
 
 import './HelloWorld.scss';
 

@@ -5,7 +5,7 @@ import { expect } from 'chai';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import reducer from '../../../../flux/store';
+import reducer from '../../../../redux/reducers';
 import HelloWorld from '../index';
 
 describe('HelloWorld component', function() {
