@@ -2,7 +2,7 @@ import React from 'react';
 
 import HelloWorld from './HelloWorld';
 
-require('./App.scss');
+import './App.scss';
 
 class App extends React.Component {
 
