@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint -c .eslintrc public src --ext .js,.jsx",
     "build": "webpack --progress --colors",
-    "start": "webpack-dev-server --progress --colors --content-base public",
+    "start": "webpack-dev-server --inline --hot --progress --colors --content-base public",
     "test": "karma start"
   },
   "repository": {
