@@ -17,4 +17,9 @@ describe('HelloWorld component', function() {
     expect(helloWorldText).to.contain('Hello');
     expect(helloWorldText).to.contain('world');
   });
+
+  it('does nothing when you press the button', () => {
+    const button = TestUtils.findRenderedDOMComponentWithClass(this.component, 'thing-generator');
+    TestUtils.Simulate.click(button);
+  });
 });

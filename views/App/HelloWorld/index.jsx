@@ -4,9 +4,16 @@ import './HelloWorld.scss';
 
 class HelloWorld extends React.Component {
 
+  buttonWasClicked() {
+    //
+  }
+
   render() {
     return (
-      <h1>Hello, world!</h1>
+      <div>
+        <h1>Hello, world!</h1>
+        <button className="thing-generator" onClick={this.buttonWasClicked}>Does nothing</button>
+      </div>
     );
   }
 
