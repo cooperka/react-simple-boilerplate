@@ -1,20 +1,21 @@
 const webpackConfig = require('./webpack.config');
 
-module.exports = function(config) {
+module.exports = (config) => {
   config.set({
     browsers: ['Chrome'],
 
     frameworks: ['mocha'],
 
     files: [
-      'tests.webpack.js',
+      '**/__tests__/*.js?',
     ],
 
     preprocessors: {
-      'tests.webpack.js': ['webpack', 'sourcemap'],
+      '**/__tests__/*.js?': ['webpack', 'sourcemap'],
     },
 
     webpack: {
+      resolve: webpackConfig.resolve,
       devtool: webpackConfig.devtool,
       module: webpackConfig.module,
     },

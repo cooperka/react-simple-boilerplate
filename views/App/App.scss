@@ -1,1 +1,7 @@
 @import '~normalize.css/normalize.css'; // Tilde resolves node modules
+
+@import '../common/variables';
+
+body {
+  background: $main-bkgd;
+}

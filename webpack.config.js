@@ -4,8 +4,12 @@ module.exports = {
 
   entry: [
     'webpack-hot-middleware/client',
-    './src/app.js',
+    './views',
   ],
+
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
 
   output: {
     path: __dirname + '/build',
@@ -13,7 +17,7 @@ module.exports = {
     filename: 'bundle.js',
   },
 
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
 
   plugins: [
     new webpack.NoErrorsPlugin(),
