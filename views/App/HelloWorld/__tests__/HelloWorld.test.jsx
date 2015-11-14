@@ -18,8 +18,13 @@ describe('HelloWorld component', function() {
     expect(helloWorldText).to.contain('world');
   });
 
-  it('does nothing when you press the button', () => {
+  it('adds a thing when you press the button', () => {
     const button = TestUtils.findRenderedDOMComponentWithClass(this.component, 'thing-generator');
-    TestUtils.Simulate.click(button);
+
+    for (let i = 1; i <= 3; i++) {
+      TestUtils.Simulate.click(button);
+      const numDivs = TestUtils.scryRenderedDOMComponentsWithClass(this.component, 'thing').length;
+      expect(numDivs).to.equal(i);
+    }
   });
 });

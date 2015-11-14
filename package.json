@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/cooperka/react-simple-boilerplate#readme",
   "devDependencies": {
+    "alt": "^0.17.9",
     "babel-core": "^6.1.2",
     "babel-eslint": "^4.1.4",
     "babel-loader": "^6.0.1",
@@ -30,6 +31,7 @@
     "eslint": "^1.9.0",
     "eslint-config-airbnb": "^1.0.0",
     "eslint-plugin-react": "^3.8.0",
+    "immutable": "^3.7.5",
     "karma": "^0.13.15",
     "karma-chrome-launcher": "^0.2.1",
     "karma-cli": "^0.1.1",
