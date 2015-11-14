@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
+import reducer from '../../../../flux/store';
 import HelloWorld from '../index';
 
 describe('HelloWorld component', function() {
   beforeEach(() => {
-    this.component = TestUtils.renderIntoDocument(<HelloWorld />);
+    const store = createStore(reducer);
+
+    this.component = TestUtils.renderIntoDocument(
+      <Provider store={store}>
+        <HelloWorld />
+      </Provider>
+    );
     this.renderedDOM = () => ReactDOM.findDOMNode(this.component);
   });
 

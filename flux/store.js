@@ -1,26 +1,23 @@
 import Immutable from 'immutable';
 
-import alt from './alt';
-import MyActions from './actions';
+import { ADD_THING } from './actions';
 
-class MyStore {
+const { assign } = Object;
 
-  constructor() {
-    this.bindListeners({
-      handleAddThing: MyActions.addThing,
-    });
+const initialState = {
+  things: Immutable.List(),
+};
 
-    this.state = {
-      things: Immutable.List(),
-    };
+function reducer(state = initialState, action) {
+  switch (action.type) {
+    case ADD_THING:
+      return assign({}, state, {
+        things: state.things.push(action.name),
+      });
+
+    default:
+      return state;
   }
-
-  handleAddThing(name) {
-    this.setState({
-      things: this.state.things.push(name),
-    });
-  }
-
 }
 
-export default alt.createStore(MyStore, 'MyStore');
+export default reducer;

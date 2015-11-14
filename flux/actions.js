@@ -1,10 +1,13 @@
-import alt from './alt';
+// --- Action types
 
-class MyActions {
-  addThing() {
-    const seconds = (new Date()).getSeconds();
-    this.dispatch(String(seconds));
-  }
+export const ADD_THING = 'ADD_THING';
+
+// --- Action creators
+
+export function addThing() {
+  const seconds = (new Date()).getSeconds();
+  return {
+    type: ADD_THING,
+    name: String(seconds),
+  };
 }
-
-export default alt.createActions(MyActions);

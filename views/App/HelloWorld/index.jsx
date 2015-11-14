@@ -1,26 +1,14 @@
 import React, { PropTypes } from 'react';
-import connectToStores from 'alt/utils/connectToStores';
+import { connect } from 'react-redux';
 
-import MyStore from '../../../flux/store';
-import MyActions from '../../../flux/actions';
+import { addThing } from '../../../flux/actions';
 
 import './HelloWorld.scss';
 
 class HelloWorld extends React.Component {
 
-  static getStores() {
-    return [MyStore];
-  }
-
-  static getPropsFromStores() {
-    const storeState = MyStore.getState();
-    return {
-      things: storeState.things,
-    };
-  }
-
   buttonWasClicked() {
-    MyActions.addThing();
+    this.props.dispatch(addThing());
   }
 
   render() {
@@ -43,7 +31,17 @@ class HelloWorld extends React.Component {
 }
 
 HelloWorld.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   things: PropTypes.object.isRequired,
 };
 
-export default connectToStores(HelloWorld);
+/**
+ * @return {Object} The props we want to inject, given the global state.
+ */
+function select(state) {
+  return {
+    things: state.things,
+  };
+}
+
+export default connect(select)(HelloWorld);

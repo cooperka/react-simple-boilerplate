@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/cooperka/react-simple-boilerplate#readme",
   "devDependencies": {
-    "alt": "^0.17.9",
     "babel-core": "^6.1.2",
     "babel-eslint": "^4.1.4",
     "babel-loader": "^6.0.1",
@@ -44,6 +43,8 @@
     "react": "^0.14.2",
     "react-addons-test-utils": "^0.14.2",
     "react-dom": "^0.14.2",
+    "react-redux": "^4.0.0",
+    "redux": "^3.0.4",
     "sass-loader": "^3.1.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.3",
