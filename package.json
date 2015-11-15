@@ -4,7 +4,7 @@
   "description": "Boilerplate repo for starting ReactJS apps.",
   "main": "views",
   "scripts": {
-    "lint": "eslint ./*.js? public views --ext .js,.jsx",
+    "lint": "eslint ./*.js? public redux views --ext .js,.jsx",
     "build": "webpack --progress --colors",
     "start": "webpack-dev-server --inline --hot --progress --colors --content-base public",
     "test": "karma start"

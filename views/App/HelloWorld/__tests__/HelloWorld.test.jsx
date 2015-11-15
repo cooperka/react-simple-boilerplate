@@ -4,36 +4,62 @@ import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import Immutable from 'immutable';
 
 import reducer from '../../../../redux/reducers';
 import HelloWorld from '../index';
 
-describe('HelloWorld component', function() {
-  beforeEach(() => {
-    const store = createStore(reducer);
+/**
+ * Expect that there will be a given number of components with this className
+ * under the root component.
+ *
+ * @param {Object} component
+ * @param {string} className
+ * @param {number} numExpected
+ */
+function expectNumberOfClassNames(component, className, numExpected) {
+  const components = TestUtils.scryRenderedDOMComponentsWithClass(component, className);
+  expect(components.length).to.equal(numExpected);
+}
 
-    this.component = TestUtils.renderIntoDocument(
-      <Provider store={store}>
-        <HelloWorld />
-      </Provider>
+describe('HelloWorld component', () => {
+  let component, renderedDOM, mockThings, mockClickHandler;
+
+  beforeEach(() => {
+    mockThings = Immutable.List();
+    mockClickHandler = () => {};
+
+    component = TestUtils.renderIntoDocument(
+      <HelloWorld things={mockThings} clickHandler={mockClickHandler} />
     );
-    this.renderedDOM = () => ReactDOM.findDOMNode(this.component);
+    renderedDOM = () => ReactDOM.findDOMNode(component);
   });
 
-  it('says hello to the world', () => {
-    const helloWorldNode = this.renderedDOM();
+  it('should say hello to the world', () => {
+    const helloWorldNode = renderedDOM();
     const helloWorldText = helloWorldNode.innerHTML;
     expect(helloWorldText).to.contain('Hello');
     expect(helloWorldText).to.contain('world');
   });
 
-  it('adds a thing when you press the button', () => {
-    const button = TestUtils.findRenderedDOMComponentWithClass(this.component, 'thing-generator');
+  it('should call the click handler when you press the button', () => {
+    const button = TestUtils.findRenderedDOMComponentWithClass(component, 'thing-generator');
 
     for (let i = 1; i <= 3; i++) {
       TestUtils.Simulate.click(button);
-      const numDivs = TestUtils.scryRenderedDOMComponentsWithClass(this.component, 'thing').length;
-      expect(numDivs).to.equal(i);
+      // TODO scry method calls
     }
+  });
+
+  it('should render as many things as it\'s told to', () => {
+    expectNumberOfClassNames(component, 'thing', 0);
+
+    const oldProps = component.props;
+    const newThings = mockThings.push('new thing');
+    component = TestUtils.renderIntoDocument(
+      <HelloWorld {...oldProps} things={newThings} />
+    );
+
+    expectNumberOfClassNames(component, 'thing', 1);
   });
 });

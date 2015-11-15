@@ -4,10 +4,9 @@ export const ADD_THING = 'ADD_THING';
 
 // --- Action creators
 
-export function addThing() {
-  const seconds = (new Date()).getSeconds();
+export function addThing(name) {
   return {
     type: ADD_THING,
-    name: String(seconds),
+    name,
   };
 }
