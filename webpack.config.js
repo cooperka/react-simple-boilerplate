@@ -9,6 +9,10 @@ module.exports = {
 
   resolve: {
     extensions: ['', '.js', '.jsx'],
+    alias: {
+      // TODO: Temporary workaround until Sinon works with Webpack.
+      sinon: 'sinon/pkg/sinon.js',
+    },
   },
 
   output: {
@@ -42,6 +46,10 @@ module.exports = {
         test: /\.(scss|sass)$/,
         loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
       },
+    ],
+    noParse: [
+      // TODO: Temporary workaround until Sinon works with Webpack.
+      /node_modules\/sinon\//,
     ],
   },
 

@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Immutable from 'immutable';
 
-import reducer from '../../../../redux/reducers';
 import HelloWorld from '../index';
+
+chai.use(sinonChai);
 
 /**
  * Expect that there will be a given number of components with this className
@@ -27,7 +30,7 @@ describe('HelloWorld component', () => {
 
   beforeEach(() => {
     mockThings = Immutable.List();
-    mockClickHandler = () => {};
+    mockClickHandler = sinon.spy();
 
     component = TestUtils.renderIntoDocument(
       <HelloWorld things={mockThings} clickHandler={mockClickHandler} />
@@ -47,7 +50,7 @@ describe('HelloWorld component', () => {
 
     for (let i = 1; i <= 3; i++) {
       TestUtils.Simulate.click(button);
-      // TODO scry method calls
+      expect(mockClickHandler).to.have.callCount(i);
     }
   });
 
