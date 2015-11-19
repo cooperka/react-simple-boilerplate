@@ -3,7 +3,8 @@ const webpack = require('webpack');
 module.exports = {
 
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors.
     './components',
   ],
 
@@ -24,6 +25,7 @@ module.exports = {
   devtool: 'inline-source-map',
 
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
   ],
 
@@ -32,11 +34,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          cacheDirectory: true,
-          presets: ['es2015', 'react'],
-        },
+        loaders: ['react-hot', 'babel'],
       },
       {
         test: /\.css$/,

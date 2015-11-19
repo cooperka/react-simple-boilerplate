@@ -14,7 +14,7 @@ I tried to organize all the work into single, standalone commits that are easy t
 1. Clone the repo
 2. `npm i`
 3. `npm start`
-4. Navigate to <http://localhost:8080>
+4. Navigate to <http://localhost:3000>
 
 ## Testing
 
