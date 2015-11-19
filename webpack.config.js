@@ -4,7 +4,7 @@ module.exports = {
 
   entry: [
     'webpack-hot-middleware/client',
-    './views',
+    './components',
   ],
 
   resolve: {
