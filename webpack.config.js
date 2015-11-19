@@ -1,9 +1,22 @@
 const webpack = require('webpack');
 
+const devServerConfig = {
+  // TODO: Colors still aren't showing up
+  colors: true,
+  quiet: false,
+  noInfo: false,
+  contentBase: 'public',
+  publicPath: '/build/',
+  host: 'localhost',
+  port: 3000,
+  hot: true,
+  historyApiFallback: true,
+};
+
 module.exports = {
 
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?http://' + devServerConfig.host + ':' + devServerConfig.port,
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors.
     './components',
   ],
@@ -23,6 +36,8 @@ module.exports = {
   },
 
   devtool: 'inline-source-map',
+
+  devServer: devServerConfig,
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
