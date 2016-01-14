@@ -1,6 +1,3 @@
-// Note: Normalize must come before any components.
-import 'normalize.css/normalize.css';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
