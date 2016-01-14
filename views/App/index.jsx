@@ -8,17 +8,30 @@ import './App.scss';
 class App extends React.Component {
 
   render() {
-    const components = <MyComponent number={10}></MyComponent>;
-    const elements = <MyElement number={10}></MyElement>;
+    let items = [];
+    for (let i = 0; i < this.props.numItems; i++) {
+      let item = getItem(this.props.itemType, i);
+      items.push(item);
+    }
 
     return (
       <div>
-        {components}
-        {elements}
+        {items}
       </div>
     );
   }
 
+}
+
+function getItem(itemType, index) {
+  switch(itemType) {
+    case 'components':
+      return <MyComponent key={index}></MyComponent>;
+    case 'elements':
+      return MyElement({key: index});
+    default:
+      return null;
+  }
 }
 
 export default App;
