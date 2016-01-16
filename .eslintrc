@@ -3,5 +3,12 @@
 
   "env": {
     "mocha": true
+  },
+
+  "rules": {
+    "no-use-before-define": [2, "nofunc"],
+    "new-cap": [2, {"capIsNewExceptions": [
+      "List"
+    ]}]
   }
 }
