@@ -23,6 +23,15 @@ class App extends React.Component {
 
 }
 
+/**
+ * Recursively create children and return a "root" item to add to the DOM.
+ *
+ * @param {string} itemType Type of items to create (e.g. 'components' or 'elements').
+ * @param {number} index Index of the item, used for generating keys.
+ * @param {number} nestLevel How many total children to nest.
+ * @param {object|undefined} children Children to add; generally will begin empty.
+ * @returns {object} A "root" item, with children.
+ */
 function getItem(itemType, index, nestLevel, children) {
   if (nestLevel > 0) {
     children = getItem(itemType, index, nestLevel - 1, children);
