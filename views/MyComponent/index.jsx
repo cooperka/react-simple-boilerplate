@@ -6,6 +6,7 @@ class MyComponent extends React.Component {
     return (
       <div key={this.props.key}>
         Component
+        {this.props.children}
       </div>
     );
   }

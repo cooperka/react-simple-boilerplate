@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
-const NUM_ITEMS = 5000;
+const NUM_ITEMS = 1000;
+const NEST_LEVEL = 5;
 
 function benchmark(name, cb) {
   console.time(name);
@@ -11,18 +12,26 @@ function benchmark(name, cb) {
   console.timeEnd(name);
 }
 
-benchmark('Components', () => {
-  ReactDOM.render(<App itemType={'components'} numItems={NUM_ITEMS} />, document.getElementById('appContainer'));
-});
-
-benchmark('Elements', () => {
-  ReactDOM.render(<App itemType={'elements'} numItems={NUM_ITEMS} />, document.getElementById('appContainer'));
-});
+ReactDOM.render(<p>Clear DOM!</p>, document.getElementById('appContainer'));
 
 benchmark('Components', () => {
-  ReactDOM.render(<App itemType={'components'} numItems={NUM_ITEMS} />, document.getElementById('appContainer'));
+  ReactDOM.render(<App itemType={'components'} numItems={NUM_ITEMS} nestLevel={NEST_LEVEL} />, document.getElementById('appContainer'));
 });
 
+ReactDOM.render(<p>Clear DOM!</p>, document.getElementById('appContainer'));
+
 benchmark('Elements', () => {
-  ReactDOM.render(<App itemType={'elements'} numItems={NUM_ITEMS} />, document.getElementById('appContainer'));
+  ReactDOM.render(<App itemType={'elements'} numItems={NUM_ITEMS} nestLevel={NEST_LEVEL} />, document.getElementById('appContainer'));
+});
+
+ReactDOM.render(<p>Clear DOM!</p>, document.getElementById('appContainer'));
+
+benchmark('Components', () => {
+  ReactDOM.render(<App itemType={'components'} numItems={NUM_ITEMS} nestLevel={NEST_LEVEL} />, document.getElementById('appContainer'));
+});
+
+ReactDOM.render(<p>Clear DOM!</p>, document.getElementById('appContainer'));
+
+benchmark('Elements', () => {
+  ReactDOM.render(<App itemType={'elements'} numItems={NUM_ITEMS} nestLevel={NEST_LEVEL} />, document.getElementById('appContainer'));
 });

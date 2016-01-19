@@ -12,4 +12,11 @@ a much earlier version of [master](https://github.com/cooperka/react-simple-boil
 
 ## Results
 
-So far, elements and components seem about the same in terms of render time.
+Elements and components both seem to render in a similar amount of time,
+regardless of how much nesting is being done.
+Elements generally seem to be faster by about 5-15%, all other factors ignored.
+
+Interestingly, the results vary wildly between each run.
+It takes several test runs before any real trends can be confirmed.
+It seems like React should be more deterministic than this;
+I'm not sure what causes this variance.

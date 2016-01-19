@@ -10,7 +10,7 @@ class App extends React.Component {
   render() {
     let items = [];
     for (let i = 0; i < this.props.numItems; i++) {
-      let item = getItem(this.props.itemType, i);
+      let item = getItem(this.props.itemType, i, this.props.nestLevel);
       items.push(item);
     }
 
@@ -23,12 +23,18 @@ class App extends React.Component {
 
 }
 
-function getItem(itemType, index) {
+function getItem(itemType, index, nestLevel, children) {
+  if (nestLevel > 0) {
+    children = getItem(itemType, index, nestLevel - 1, children);
+  }
+
+  var key = index + '-' + nestLevel;
+
   switch(itemType) {
     case 'components':
-      return <MyComponent key={index}></MyComponent>;
+      return <MyComponent key={key}>{children}</MyComponent>;
     case 'elements':
-      return MyElement({key: index});
+      return MyElement({key: key, children: children});
     default:
       return null;
   }

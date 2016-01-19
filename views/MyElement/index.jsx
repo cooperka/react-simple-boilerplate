@@ -5,6 +5,7 @@ const MyElement = (props) => {
     <div key={props.key}>
       <div>
         Element
+        {props.children}
       </div>
     </div>
   );
