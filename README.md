@@ -16,6 +16,10 @@ Elements and components both seem to render in a similar amount of time,
 regardless of how much nesting is being done.
 Elements generally seem to be faster by about 5-15%, all other factors ignored.
 
+Shorter, fully unique keys result in a significant performance gain as compared to longer keys.
+Short numeric keys (such as a for-loop index) seem to be faster than long strings
+(50-60 characters in this case) by up to 30-40%!
+
 Interestingly, the results vary wildly between each run.
 It takes several test runs before any real trends can be confirmed.
 It seems like React should be more deterministic than this;

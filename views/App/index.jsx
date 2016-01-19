@@ -28,7 +28,7 @@ function getItem(itemType, index, nestLevel, children) {
     children = getItem(itemType, index, nestLevel - 1, children);
   }
 
-  var key = index;
+  var key = 'asdfasdfasdfasdfasdfasdfasdf' + itemType + '-' + index + '-' + nestLevel;
 
   switch(itemType) {
     case 'components':
