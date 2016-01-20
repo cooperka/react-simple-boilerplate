@@ -18,7 +18,10 @@ Elements generally seem to be faster by about 5-15%, all other factors ignored.
 
 Shorter, fully unique keys result in a significant performance gain as compared to longer keys.
 Short numeric keys (such as a for-loop index) seem to be faster than long strings
-(50-60 characters in this case) by up to 30-40%!
+(50-60 characters in this case) by roughly 30-40%!
+
+Adding component lifecycle methods and extra class members doesn't seem to interfere very much;
+elements still only seem to be performing about 5-15% faster.
 
 Interestingly, the results vary wildly between each run.
 It takes several test runs before any real trends can be confirmed.
