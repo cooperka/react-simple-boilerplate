@@ -8,7 +8,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Immutable from 'immutable';
 
-import HelloWorld from '../index';
+import HelloWorld from '../HelloWorld';
 
 chai.use(sinonChai);
 

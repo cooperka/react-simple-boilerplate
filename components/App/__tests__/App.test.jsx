@@ -6,8 +6,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import reducer from '../../../redux/reducers';
-import App from '../index';
-import HelloWorld from '../HelloWorld';
+import App from '../App';
+import HelloWorld from '../HelloWorld/HelloWorld';
 
 describe('App component', () => {
   let component, renderedDOM;
