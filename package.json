@@ -2,11 +2,11 @@
   "name": "react-simple-boilerplate",
   "version": "0.0.1",
   "description": "Boilerplate repo for starting ReactJS apps.",
-  "main": "components",
+  "main": "server",
   "scripts": {
     "lint": "eslint ./*.js? public redux views --ext .js,.jsx",
     "build": "webpack --progress --colors",
-    "start": "node server/server.js",
+    "start": "node server",
     "test": "karma start"
   },
   "repository": {

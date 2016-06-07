@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import HelloWorld from './HelloWorld/HelloWorld';
-import { addThing } from '../../redux/actions';
+import { addThing } from '../../../redux/actions';
 
 import './App.scss';
 

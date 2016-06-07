@@ -1,5 +1,5 @@
 // Note: Normalize must come before any components.
-import 'normalize.css/normalize.css';
+import '../../node_modules/normalize.css/normalize.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 
 import App from './App/App';
 import DevTools from './DevTools';
-import configureStore from '../redux/configureStore';
+import configureStore from '../../redux/configureStore';
 
 const store = configureStore();
 

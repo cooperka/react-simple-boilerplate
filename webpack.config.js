@@ -5,8 +5,8 @@ const devServerConfig = {
   colors: true,
   quiet: false,
   noInfo: false,
-  contentBase: 'public',
-  publicPath: '/build/',
+  contentBase: 'client/public',
+  publicPath: '/build',
   host: 'localhost',
   port: 3000,
   hot: true,
@@ -18,7 +18,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://' + devServerConfig.host + ':' + devServerConfig.port,
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors.
-    './components',
+    './client/components',
   ],
 
   resolve: {
