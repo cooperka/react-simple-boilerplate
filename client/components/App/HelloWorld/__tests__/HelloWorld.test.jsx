@@ -4,8 +4,6 @@ import TestUtils from 'react-addons-test-utils';
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import Immutable from 'immutable';
 
 import HelloWorld from '../HelloWorld';
@@ -26,7 +24,10 @@ function expectNumberOfClassNames(component, className, numExpected) {
 }
 
 describe('HelloWorld component', () => {
-  let component, renderedDOM, mockThings, mockClickHandler;
+  let component;
+  let renderedDOM;
+  let mockThings;
+  let mockClickHandler;
 
   beforeEach(() => {
     mockThings = Immutable.List();

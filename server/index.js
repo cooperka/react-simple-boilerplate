@@ -8,7 +8,7 @@ const port = webpackConfig.devServer.port;
 
 const server = new WebpackDevServer(webpack(webpackConfig), webpackConfig.devServer);
 
-server.listen(port, host, (err, result) => {
+server.listen(port, host, (err) => {
   if (err) {
     console.log(err);
   }

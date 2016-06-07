@@ -5,7 +5,7 @@ import './HelloWorld.scss';
 class HelloWorld extends React.Component {
 
   render() {
-    let { things, clickHandler } = this.props;
+    const { things, clickHandler } = this.props;
 
     let numThings = 0;
     const thingsToRender = (things || []).map(name => {

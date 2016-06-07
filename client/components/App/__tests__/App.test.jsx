@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import { expect } from 'chai';
 import { createStore } from 'redux';
@@ -10,7 +9,7 @@ import App from '../App';
 import HelloWorld from '../HelloWorld/HelloWorld';
 
 describe('App component', () => {
-  let component, renderedDOM;
+  let component;
 
   beforeEach(() => {
     const store = createStore(reducer);
@@ -21,7 +20,6 @@ describe('App component', () => {
       </Provider>
     );
     component = TestUtils.findRenderedComponentWithType(rootComponent, App);
-    renderedDOM = () => ReactDOM.findDOMNode(component);
   });
 
   it('should contain a HelloWorld component', () => {
