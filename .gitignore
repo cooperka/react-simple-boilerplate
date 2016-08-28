@@ -1,4 +1,6 @@
 build/*
+!build/app.*
+!build/index.html
 
 node_modules
 ncp-debug.log

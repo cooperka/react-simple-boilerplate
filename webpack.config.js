@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const ReactStaticPlugin = require('react-static-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const devServerConfig = {
   // TODO: Colors still aren't showing up
@@ -18,8 +20,6 @@ module.exports = {
 
   entry: {
     app: [
-      `webpack-dev-server/client?http://${devServerConfig.host}:${devServerConfig.port}`,
-      'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors.
       './client/components',
     ],
   },
@@ -35,7 +35,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'build'),
     publicPath: '/build',
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
 
   devtool: 'inline-source-map',
@@ -43,8 +43,12 @@ module.exports = {
   devServer: devServerConfig,
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('[name].css', { allChunks: true }),
+    new ReactStaticPlugin({
+      routes: './client/static-utils/routes.jsx',
+      template: './client/static-utils/template.jsx',
+      reduxStore: './client/static-utils/configureStore.js',
+    }),
   ],
 
   module: {
@@ -52,15 +56,15 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel'],
+        loaders: ['babel'],
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css'],
+        loader: ExtractTextPlugin.extract('style', 'css'),
       },
       {
         test: /\.(scss|sass)$/,
-        loaders: ['style', 'css?sourceMap', 'sass?sourceMap'],
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap'),
       },
     ],
     noParse: [

@@ -9,6 +9,8 @@ import App from './App/App';
 import DevTools from './DevTools';
 import configureStore from '../../redux/configureStore';
 
+// This store is used for regular rendering, but a different object is injected
+// when building statically.
 const store = configureStore();
 
 const rootComponent = (
