@@ -11,6 +11,15 @@ I tried to organize all the work into single, standalone commits that are easy t
 
 ## Usage
 
+### Online
+
+Visit <http://cooperka.github.io/react-simple-boilerplate/> to try it out.
+It's statically hosted using GitHub Pages, and built using
+[react-static-webpack-plugin](https://www.npmjs.com/package/react-static-webpack-plugin)
+(see the [gh-pages](https://github.com/cooperka/react-simple-boilerplate/tree/gh-pages) branch).
+
+### Locally
+
 1. Clone the repo
 2. `npm i`
 3. `npm start`
