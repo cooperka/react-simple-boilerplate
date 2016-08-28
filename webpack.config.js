@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 
 const devServerConfig = {
@@ -15,11 +16,13 @@ const devServerConfig = {
 
 module.exports = {
 
-  entry: [
-    'webpack-dev-server/client?http://' + devServerConfig.host + ':' + devServerConfig.port,
-    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors.
-    './client/components',
-  ],
+  entry: {
+    app: [
+      'webpack-dev-server/client?http://' + devServerConfig.host + ':' + devServerConfig.port,
+      'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors.
+      './client/components',
+    ],
+  },
 
   resolve: {
     extensions: ['', '.js', '.jsx'],
@@ -30,7 +33,7 @@ module.exports = {
   },
 
   output: {
-    path: __dirname + '/build',
+    path: path.join(__dirname, 'build'),
     publicPath: '/build',
     filename: 'bundle.js',
   },
