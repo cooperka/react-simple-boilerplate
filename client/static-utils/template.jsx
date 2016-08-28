@@ -7,13 +7,13 @@ const Html = (props) => (
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
-      <link rel="stylesheet" href="app.css" />
+      <link rel="stylesheet" href="build/app.css" />
       <title>{props.title}</title>
     </head>
 
     <body>
       <div id="appContainer" dangerouslySetInnerHTML={{ __html: props.body }} />
-      <script src="app.js" />
+      <script src="build/app.js" />
     </body>
 
   </html>

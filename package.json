@@ -5,7 +5,7 @@
   "main": "server",
   "scripts": {
     "lint": "eslint *.js *.jsx client server redux --ext .js,.jsx",
-    "build": "webpack --progress --colors",
+    "build": "webpack --progress --colors && mv ./build/index.html ./index.html",
     "start": "node server",
     "test": "karma start",
     "test:travis": "karma start --single-run --browsers PhantomJS"
