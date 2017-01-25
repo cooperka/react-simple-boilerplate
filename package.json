@@ -9,6 +9,12 @@
     "start": "node server",
     "test": "karma start"
   },
+  "keywords": [
+    "react",
+    "boilerplate",
+    "tutorial",
+    "starter"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cooperka/react-simple-boilerplate.git"
