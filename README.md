@@ -1,5 +1,7 @@
 # ReactJS Boilerplate
 
+[![Build status](https://travis-ci.org/cooperka/react-simple-boilerplate.svg?branch=master)](https://travis-ci.org/cooperka/react-simple-boilerplate)
+
 Boilerplate repo for starting ReactJS apps. Mostly for personal use and sandboxing,
 though also potentially a nice resource for beginners to get to know React
 and a lot of the supporting libraries (webpack, babel, redux, etc.)
@@ -21,7 +23,7 @@ It's statically hosted using GitHub Pages, and built using
 ### Locally
 
 1. Clone the repo
-2. `npm i`
+2. `npm install`
 3. `npm start`
 4. Navigate to <http://localhost:3000>
 
