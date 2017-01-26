@@ -7,11 +7,11 @@ module.exports = (config) => {
     frameworks: ['mocha', 'sinon-chai'],
 
     files: [
-      '**/__tests__/*.js?',
+      'client/**/__tests__/*.js',
     ],
 
     preprocessors: {
-      '**/__tests__/*.js?': ['webpack', 'sourcemap'],
+      'client/**/__tests__/*.js': ['webpack', 'sourcemap'],
     },
 
     webpack: {

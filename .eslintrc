@@ -2,6 +2,7 @@
   "extends": "cooperka/react",
 
   "env": {
+    "browser": true,
     "mocha": true
   }
 }

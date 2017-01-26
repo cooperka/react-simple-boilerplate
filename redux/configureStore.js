@@ -10,7 +10,7 @@ const finalCreateStore = compose(
   // Required! Enable Redux DevTools with the monitors you set up in DevTools.
   DevTools.instrument(),
 
-  persistState(getDebugSessionKey())
+  persistState(getDebugSessionKey()),
 )(createStore);
 
 /**
@@ -28,7 +28,8 @@ export default function configureStore(initialState) {
   // Hot reload reducers
   if (module.hot) {
     module.hot.accept('./reducers', () =>
-      store.replaceReducer(require('./reducers') /* .default if you use Babel 6+ */)
+      // eslint-disable-next-line global-require
+      store.replaceReducer(require('./reducers') /* .default if you use Babel 6+ */),
     );
   }
 

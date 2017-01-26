@@ -18,7 +18,7 @@ module.exports = {
 
   entry: {
     app: [
-      'webpack-dev-server/client?http://' + devServerConfig.host + ':' + devServerConfig.port,
+      `webpack-dev-server/client?http://${devServerConfig.host}:${devServerConfig.port}`,
       'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors.
       './client/components',
     ],

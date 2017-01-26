@@ -1,5 +1,5 @@
 // Note: Normalize must come before any components.
-import '../../node_modules/normalize.css/normalize.css';
+import 'normalize.css/normalize.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

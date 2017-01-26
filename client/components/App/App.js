@@ -17,7 +17,7 @@ class App extends React.Component {
     const { things } = this.props;
 
     return (
-      <HelloWorld things={things} clickHandler={this.thingButtonWasClicked.bind(this)} />
+      <HelloWorld things={things} clickHandler={() => this.thingButtonWasClicked()} />
     );
   }
 

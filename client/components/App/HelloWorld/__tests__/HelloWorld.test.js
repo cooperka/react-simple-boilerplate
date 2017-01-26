@@ -34,8 +34,10 @@ describe('HelloWorld component', () => {
     mockClickHandler = sinon.spy();
 
     component = TestUtils.renderIntoDocument(
-      <HelloWorld things={mockThings} clickHandler={mockClickHandler} />
+      <HelloWorld things={mockThings} clickHandler={mockClickHandler} />,
     );
+
+    // eslint-disable-next-line react/no-find-dom-node
     renderedDOM = () => ReactDOM.findDOMNode(component);
   });
 
@@ -49,7 +51,7 @@ describe('HelloWorld component', () => {
   it('should call the click handler when you press the button', () => {
     const button = TestUtils.findRenderedDOMComponentWithClass(component, 'thing-generator');
 
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 3; i += 1) {
       TestUtils.Simulate.click(button);
       expect(mockClickHandler).to.have.callCount(i);
     }
@@ -61,7 +63,7 @@ describe('HelloWorld component', () => {
     const oldProps = component.props;
     const newThings = mockThings.push('new thing');
     component = TestUtils.renderIntoDocument(
-      <HelloWorld {...oldProps} things={newThings} />
+      <HelloWorld {...oldProps} things={newThings} />,
     );
 
     expectNumberOfClassNames(component, 'thing', 1);

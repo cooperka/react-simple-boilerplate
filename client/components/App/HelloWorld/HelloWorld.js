@@ -2,14 +2,16 @@ import React, { PropTypes } from 'react';
 
 import './HelloWorld.scss';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class HelloWorld extends React.Component {
 
   render() {
     const { things, clickHandler } = this.props;
 
     let numThings = 0;
-    const thingsToRender = (things || []).map(name => {
-      return <div className="thing" key={numThings++}>Thing {name}</div>;
+    const thingsToRender = (things || []).map((name) => {
+      numThings += 1;
+      return <div className="thing" key={numThings}>Thing {name}</div>;
     });
 
     return (

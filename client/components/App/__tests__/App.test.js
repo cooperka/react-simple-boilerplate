@@ -17,7 +17,7 @@ describe('App component', () => {
     const rootComponent = TestUtils.renderIntoDocument(
       <Provider store={store}>
         <App />
-      </Provider>
+      </Provider>,
     );
     component = TestUtils.findRenderedComponentWithType(rootComponent, App);
   });
